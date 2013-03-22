@@ -53,7 +53,8 @@ class RiakHttpConnection(object):
 
     def _connect(self):
         self._connection = self._connection_class(self._node.host,
-                                                  self._node.http_port)
+                                                  self._node.http_port,
+                                                  timeout=1)
 
     def close(self):
         """
